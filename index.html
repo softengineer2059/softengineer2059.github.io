@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Администрация Ахтынского района</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- MAX WebApp SDK -->
+    <script src="https://st.max.ru/js/max-web-app.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- Шапка -->
+        <header class="header">
+            <button class="back-btn" id="backBtn" style="display:none;">←</button>
+            <h1 id="pageTitle">Администрация</h1>
+        </header>
+
+        <!-- Главное меню -->
+        <main id="mainMenu" class="page active">
+            <div class="hero">
+                <div class="hero-icon">🏛</div>
+                <h2>Администрация<br>Ахтынского района</h2>
+                <p>Информационный портал</p>
+            </div>
+
+            <div class="menu-grid">
+                <button class="menu-card" data-route="admin">
+                    <span class="menu-icon">🏛</span>
+                    <span class="menu-label">Администрация</span>
+                </button>
+                <button class="menu-card" data-route="villages">
+                    <span class="menu-icon">🏘</span>
+                    <span class="menu-label">Сельские поселения</span>
+                </button>
+                <button class="menu-card" data-route="schools">
+                    <span class="menu-icon">🏫</span>
+                    <span class="menu-label">Школы района</span>
+                </button>
+                <button class="menu-card" data-route="links">
+                    <span class="menu-icon">🔗</span>
+                    <span class="menu-label">Полезные ссылки</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Раздел: Администрация -->
+        <main id="adminPage" class="page">
+            <div class="cards">
+                <a class="card link-card" href="https://akhtymr.ru/site/section?id=455" target="_blank">
+                    <span>🕯</span>
+                    <div>
+                        <strong>Памятники ВОВ</strong>
+                        <small>Ахтынского района</small>
+                    </div>
+                </a>
+                <a class="card link-card" href="https://akhtymr.ru/site/section?id=202" target="_blank">
+                    <span>📰</span>
+                    <div>
+                        <strong>Газета «Новый мир»</strong>
+                        <small>Архив выпусков</small>
+                    </div>
+                </a>
+
+                <div class="card-group">
+                    <button class="chip" data-admin="address">📍 Адрес</button>
+                    <button class="chip" data-admin="phone">📞 Контакты</button>
+                    <button class="chip" data-admin="schedule">🕐 График работы</button>
+                </div>
+
+                <div class="socials">
+                    <a class="social tg" id="tgLink" target="_blank">Telegram</a>
+                    <a class="social vk" id="vkLink" target="_blank">ВКонтакте</a>
+                    <a class="social site" id="siteLink" target="_blank">Сайт</a>
+                </div>
+
+                <button class="card primary-card" id="receptionBtn">
+                    <span>👥</span>
+                    <div>
+                        <strong>Прием граждан</strong>
+                        <small>График личного приема</small>
+                    </div>
+                </button>
+            </div>
+        </main>
+
+        <!-- Раздел: Сельские поселения -->
+        <main id="villagesPage" class="page">
+            <div class="cards" id="villagesList"></div>
+        </main>
+
+        <!-- Раздел: Школы -->
+        <main id="schoolsPage" class="page">
+            <div class="cards" id="schoolsList"></div>
+        </main>
+
+        <!-- Раздел: Ссылки -->
+        <main id="linksPage" class="page">
+            <div class="cards">
+                <a class="card link-card" href="https://akhtymr.ru" target="_blank">
+                    <span>🌐</span>
+                    <div>
+                        <strong>Официальный сайт</strong>
+                        <small>akhtymr.ru</small>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальное окно / карточка детали -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
