@@ -15,7 +15,8 @@ const pages = {
     adminPage:    { el: document.getElementById('adminPage'),    title: 'Администрация' },
     villagesPage: { el: document.getElementById('villagesPage'), title: 'Сельские поселения' },
     schoolsPage:  { el: document.getElementById('schoolsPage'),  title: 'Школы района' },
-    linksPage:    { el: document.getElementById('linksPage'),    title: 'Полезные ссылки' }
+    linksPage:    { el: document.getElementById('linksPage'),    title: 'Полезные ссылки' },
+    zhkkhPage:    { el: document.getElementById('zhkkhPage'),    title: 'МБУ УЖКХ "Ахтынский район"' }
 };
 
 let history = ['mainMenu'];
@@ -66,7 +67,8 @@ document.querySelectorAll('.menu-card').forEach(btn => {
             admin:    'adminPage',
             villages: 'villagesPage',
             schools:  'schoolsPage',
-            links:    'linksPage'
+            links:    'linksPage',
+            zhkkh: 'zhkkhPage'
         };
         if (map[route]) showPage(map[route]);
     });
@@ -135,6 +137,23 @@ document.querySelectorAll('.chip[data-admin]').forEach(chip => {
                 <p>📧 Email: <a href="mailto:${DB.adminContacts.email}">${DB.adminContacts.email}</a></p>`;
         } else if (type === 'schedule') {
             html = `<h3>🕐 График работы</h3><p>${DB.adminContacts.schedule}</p>`;
+        }
+
+        openModal(html);
+    });
+});
+
+// === Раздел "УЖКХ": чипы ===
+document.querySelectorAll('.chip[data-admin]').forEach(chip => {
+    chip.addEventListener('click', () => {
+        const type = chip.dataset.admin;
+        let html = '';
+
+        if (type === 'address') {
+            html = `<h3>📍 Адрес</h3><p>${DB.zhkkhContacts.address}</p>`;
+        } else if (type === 'phone') {
+            html = `<h3>📞 Контакты</h3>
+                <p>📧 Email: <a href="mailto:${DB.zhkkhContacts.email}">${DB.zhkkhContacts.email}</a></p>`;
         }
 
         openModal(html);
