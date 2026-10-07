@@ -12,6 +12,12 @@ const DB = {
         site: "https://akhtymr.ru/"
     },
 
+    // get_contacts() -> zhkkh_contacts
+    zhkkhContacts: {
+        address: "368730, РЕСПУБЛИКА ДАГЕСТАН, АХТЫНСКИЙ Р-Н, С. АХТЫ, УЛ. ЮСУФА ГЕРЕЙХАНОВА, Д. 18",
+        email: "yjkhakhty@mail.ru"
+    },
+
     // get_reception_info() -> reception_info
     receptionInfo: [
         {
